@@ -36,12 +36,58 @@ Create a native app first as primary user experience of your app
 
 📱 Easy to Start/Open
 ```
+---
+transition: fade-out
+layout: image-right
+image: ./faizur-rehman-dJpupM4LiS4-unsplash.jpg
+---
+# But Web Applications Evolved...
+
+Thanks to PWAs, web applications became very similar to mobile apps
+
+<br>
+
+<cite>
+A progressive web app (PWA) is an app that's built using web platform technologies, but that provides a user experience like that of a platform-specific app.
+<br><br>Mozilla Docs
+</cite>
+
+
+---
+layout: default
+---
+<div grid="~ cols-3 gap-6">
+
+<v-click>
+  <div>
+    <img src="native_tweet.png" alt="phone" />
+  </div>
+</v-click>
+  
+  <div>
+    <img src="phone.png" alt="phone" />
+  </div>
+
+<v-click>
+  <div>
+    <img src="web_tweet.png" alt="phone" />
+  </div>
+</v-click>
+</div>
+
+<style>
+img {
+  width: 100%
+}
+</style>
+
 
 ---
 transition: fade-out
 layout: image-right
 image: ./sarah-dorweiler-QeVmJxZOv3k-unsplash.jpg
 ---
+
 
 # Web Application's Benefits
 
@@ -59,13 +105,13 @@ Web apps have some extra advantages...
 🪽 Smaller memory footprint
 
 🏎️ Faster live on the market
+
+👯‍♂️ Can Run on Multiple Platforms (not bound to one OS)
 ```
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
 Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
 <style>
 h1 {
   background-color: #2B90B6;
@@ -77,15 +123,10 @@ h1 {
   -moz-text-fill-color: transparent;
 }
 </style>
-
-<!--
-Here is another comment.
 -->
-
 ---
 layout: default
 ---
-
 
 # Code
 
