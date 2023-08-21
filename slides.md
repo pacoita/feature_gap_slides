@@ -212,6 +212,35 @@ img {
 layout: default
 ---
 
+# Shortcuts
+
+We can add <i>shortcuts</i> to the web manifest to enhance the user's engagement
+
+<br>
+
+<div grid="~ cols-2 gap-6">
+
+  <img src="shortcuts.png" alt="phone" />
+
+  <div v-click>
+    <img src="shortcuts2.jpg" alt="phone" />
+  </div>
+</div>
+
+<style>
+.slidev-layout {
+  padding-top: 0;
+}
+
+img {
+  height: 100%;
+  width: 250px;
+}
+</style>
+
+---
+layout: default
+---
 # END
 
 ---
