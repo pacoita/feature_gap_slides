@@ -63,10 +63,11 @@ A progressive web app (PWA) is an app that's built using web platform technologi
 </cite>
 
 ---
+transition: fade-out
 layout: default
 ---
-<div grid="~ cols-3 gap-6">
 
+<div grid="~ cols-3 gap-4">
   <div>
     <div v-click="1">
       <img src="nativeTweetter.png" alt="phone" />
@@ -77,11 +78,9 @@ layout: default
       </div>
     </div>
   </div>
-  
   <div>
     <img src="phone.png" alt="phone" />
   </div>
-
   <div>
     <div v-click="1">
       <img src="pwaTweeter.png" alt="phone" />
@@ -95,9 +94,6 @@ layout: default
 </div>
 
 <style>
-img {
-  width: 100%
-}
 .size_1 {
     position: absolute;
     bottom: 120px;
@@ -160,6 +156,11 @@ layout: image
 image: ./managelayout.png
 ---
 
+
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
 ---
 transition: fade-out
 layout: default
@@ -183,6 +184,7 @@ layout: default
 of the PWA's appearance or behavior. Here's a rather minimal manifest, containing just two members: "name" and "icons". -->
 
 ---
+transition: fade-out
 layout: default
 ---
 
@@ -240,6 +242,7 @@ img {
 </style>
 
 ---
+transition: fade-out
 layout: default
 ---
 
@@ -279,6 +282,11 @@ layout: image
 image: ./manageperf.png
 ---
 
+
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
 ---
 transition: fade-out
 layout: default
@@ -291,14 +299,14 @@ layout: default
 Service Workers allow to optimise our web applications, introducing:
 <br><br>
 
-<div v-click>
+<v-click>
   <h4> ✅ Local Caching for static assets and network requests</h4>
-</div>
+</v-click>
 <br>
 
-<div v-click>
+<v-click>
  <h4> ✅ Offline Capabilities</h4>
-</div>
+</v-click>
 
 ---
 transition: fade-out
@@ -388,26 +396,64 @@ layout: default
       );
     });
 ```
-  <img src="stalecache.png" /> 
-  
- <!-- https://web.dev/stale-while-revalidate/ -->
+<div class="cache">
+  <img src="stalecache.png" />
+</div>
 
- <style>
-img {
-  position: absolute;
-  top: 100px;
-  right: 60px;
-  width: 330px;
+
+<style>
+.cache {
+    img {
+    position: absolute;
+    top: 100px;
+    right: 60px;
+    width: 330px;
+  }
 }
 </style>
 
+ <!-- https://web.dev/stale-while-revalidate/ -->
 ---
 transition: fade-out
 layout: image
 image: ./demooffline.png
 ---
 
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
 ---
+transition: fade-out
+layout: default
+---
+# Web APIs
+Web APIs can add powerful features to our application
+
+--> What Web can Do today (as general Intro)
+
+---
+transition: fade-out
+layout: image
+image: ./light.png
+---
+
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
+---
+layout: image
+image: ./bread.png
+---
+
+
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
+---
+transition: fade-out
 layout: default
 ---
 # END
