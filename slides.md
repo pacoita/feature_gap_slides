@@ -16,6 +16,16 @@ title:
 }
 </style>
 ---
+layout: default
+---
+
+<div>
+  <img src="personalinfo.png">
+</div>
+
+
+
+---
 transition: fade-out
 layout: image-right
 image: ./shiwa-id-Uae7ouMw91A-unsplash.jpg
@@ -52,50 +62,69 @@ A progressive web app (PWA) is an app that's built using web platform technologi
 <br><br>Mozilla Docs
 </cite>
 
-
 ---
 layout: default
 ---
 <div grid="~ cols-3 gap-6">
 
-<v-click>
   <div>
-    <img src="native_tweet.png" alt="phone" />
+    <div v-click="1">
+      <img src="nativeTweetter.png" alt="phone" />
+    </div>
+    <div v-click="2">
+      <div class="size_1">
+        <img src="nativeSize.png" alt="phone" />
+      </div>
+    </div>
   </div>
-</v-click>
   
   <div>
     <img src="phone.png" alt="phone" />
   </div>
 
-<v-click>
   <div>
-    <img src="web_tweet.png" alt="phone" />
+    <div v-click="1">
+      <img src="pwaTweeter.png" alt="phone" />
+    </div>
+    <div class="size_2" v-click="2">
+      <div>
+        <img src="pwaSize.png" alt="phone" />
+      </div>
+    </div>
   </div>
-</v-click>
 </div>
 
 <style>
 img {
   width: 100%
 }
+.size_1 {
+    position: absolute;
+    bottom: 120px;
+    left: 110px;
+    width: 200px;
+}
+.size_2 {
+    position: absolute;
+    bottom: 120px;
+    right: 75px;
+    width: 200px;
+}
 </style>
 
 
 ---
 transition: fade-out
-layout: image-right
+layout: image-left
 image: ./sarah-dorweiler-QeVmJxZOv3k-unsplash.jpg
 ---
 
 
-# Web Application's Benefits
-
-Web apps have some extra advantages...
+# Web Application's Extra Benefits
 
 <br>
 
-```text {all|1|3|5|7|9|all}
+```text {all|1|3|5|7|9|11|all}
 ✅ No store approval dependencies 
 
 🛠️ Easier to mantain
@@ -106,7 +135,7 @@ Web apps have some extra advantages...
 
 🏎️ Faster live on the market
 
-👯‍♂️ Can Run on Multiple Platforms (not bound to one OS)
+👯‍♂️ Not bound to one OS
 ```
 
 <!--
@@ -124,6 +153,67 @@ h1 {
 }
 </style>
 -->
+
+---
+layout: default
+---
+
+# Web Manifest
+
+
+```json {all|2-3|6|7|8|9-22|all}
+{
+  "name": "angular-pwa",
+  "short_name": "angular-pwa",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
+```
+<div v-click>
+  <img src="installpwa.jpg" alt="phone" />
+</div>
+
+<style>
+img {
+  position: absolute;
+  top: 20px;
+  right: 115px;
+  width: 250px;
+}
+
+.slidev-vclick-target {
+  transition: opacity 200ms ease;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+</style>
+
+---
+layout: default
+---
+
+# END
+
 ---
 layout: default
 ---
