@@ -302,6 +302,107 @@ Service Workers allow to optimise our web applications, introducing:
 
 ---
 transition: fade-out
+layout: default
+---
+
+# Registering a Service Worker
+
+<br>
+
+```ts
+  if ("serviceWorker" in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register("/serviceWorker.js", {
+        scope: "/",
+      });
+      if (registration.installing) {
+        // Service worker is installing...
+
+      } else if (registration.waiting) {
+        // Service worker is now installed and waits to be activated!
+
+      } else if (registration.active) {
+        // Service worker has been actived.
+      }
+    } catch (error) {
+      console.error(`Registration failed with error: ${error}`);
+    }
+  }
+```
+
+---
+transition: fade-out
+layout: default
+---
+
+# Caching Strategies
+We can implement different strategies according to our needs:
+<br><br>
+
+<div v-click>
+  <h5><b>Cache First</b>: maximize performance & allows offline behaviour</h5>
+</div>
+<br>
+
+<div v-click>
+ <h5><b>Network First</b>: preference for fresh data, but allows to fallback to cache</h5>
+</div>
+<br>
+
+<div v-click>
+ <h5><b>Stale While Revalidate</b>: hybrid solution, allowing quick responses with <i>fresher</i> data</h5>
+</div>
+
+<style>
+  b {
+    color: var(--slidev-theme-primary);
+  }
+</style>
+
+---
+transition: fade-out
+layout: default
+---
+
+# Stale While Revalidate
+
+```ts {all|5-6|17|7-14|17|all}
+    self.addEventListener('fetch', (event) => {
+      event.respondWith(
+        (async function () {
+
+          const cache = await caches.open('cache_V1');
+          const cachedResponse = await cache.match(event.request);
+          const serverResponsePromise = fetch(event.request);
+
+          event.waitUntil(
+            (async function () {
+              const serverResponse = await serverResponsePromise;
+              await cache.put(event.request, serverResponse.clone());
+            })(),
+          );
+
+          // Provide the response in teh cache if available or fetch it from the server, otherwise.
+          return cachedResponse || serverResponsePromise;
+        })(),
+      );
+    });
+```
+  <img src="stalecache.png" /> 
+  
+ <!-- https://web.dev/stale-while-revalidate/ -->
+
+ <style>
+img {
+  position: absolute;
+  top: 100px;
+  right: 60px;
+  width: 330px;
+}
+</style>
+
+---
+transition: fade-out
 layout: image
 image: ./demooffline.png
 ---
