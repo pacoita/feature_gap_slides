@@ -155,11 +155,39 @@ h1 {
 -->
 
 ---
+transition: fade-out
+layout: image
+image: ./managelayout.png
+---
+
+---
+transition: fade-out
 layout: default
 ---
 
 # Web Manifest
 
+<br> 
+
+```html {all|3}
+<html lang="en">
+  <head>
+    <link rel="manifest" href="manifest.json" />
+    <!-- ... -->
+  </head>
+  <body></body>
+</html>
+```
+
+<!-- The manifest contains a single JSON object containing a collection of members, each of which defines some aspect 
+of the PWA's appearance or behavior. Here's a rather minimal manifest, containing just two members: "name" and "icons". -->
+
+---
+layout: default
+---
+
+# Web Manifest
+<br> 
 
 ```json {all|2-3|6|7|8|9-22|all}
 {
@@ -186,9 +214,12 @@ layout: default
   ]
 }
 ```
+
 <div v-click>
   <img src="installpwa.jpg" alt="phone" />
 </div>
+
+<arrow v-click x1="460" y1="480" x2="590" y2="480" color="#e9ff00" width="3" arrowSize="1" />
 
 <style>
 img {
@@ -237,6 +268,43 @@ img {
   width: 250px;
 }
 </style>
+
+<!--
+Presenter note goes here
+-->
+
+---
+transition: fade-out
+layout: image
+image: ./manageperf.png
+---
+
+---
+transition: fade-out
+layout: default
+---
+
+# Service Workers & Caching Strategies
+
+<br>
+
+Service Workers allow to optimise our web applications, introducing:
+<br><br>
+
+<div v-click>
+  <h4> ✅ Local Caching for static assets and network requests</h4>
+</div>
+<br>
+
+<div v-click>
+ <h4> ✅ Offline Capabilities</h4>
+</div>
+
+---
+transition: fade-out
+layout: image
+image: ./demooffline.png
+---
 
 ---
 layout: default
