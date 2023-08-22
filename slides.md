@@ -423,6 +423,35 @@ image: ./demooffline.png
   <img src="logoTweet.png">
 </div>
 
+<div class="angular">
+  <img src="angular-logo.png">
+</div>
+
+<div class="firestore">
+  <img src="firebase-logo.png">
+</div>
+
+<style>
+  .angular {
+    position: absolute;
+    left:50px;
+    bottom:300px;
+    width:100px;
+  }
+  .firestore {
+    position: absolute;
+    left:50px;
+    bottom:150px;
+    width:100px;
+  }
+</style>
+
+<!-- Show in demo: 
+- Angular + Firestore
+- Standalone App
+- APGT (?)
+- Going offline + Auto Sync -->
+
 ---
 transition: fade-out
 layout: default
