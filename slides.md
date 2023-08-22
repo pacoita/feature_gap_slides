@@ -83,7 +83,7 @@ layout: default
   </div>
   <div>
     <div v-click="1">
-      <img src="pwaTweeter.png" alt="phone" />
+      <img src="pwaTweeter.jpg" alt="phone" />
     </div>
     <div class="size_2" v-click="2">
       <div>
@@ -96,14 +96,14 @@ layout: default
 <style>
 .size_1 {
     position: absolute;
-    bottom: 120px;
-    left: 110px;
+    bottom: 90px;
+    left: 100px;
     width: 200px;
 }
 .size_2 {
     position: absolute;
-    bottom: 120px;
-    right: 75px;
+    bottom: 90px;
+    right: 95px;
     width: 200px;
 }
 </style>
