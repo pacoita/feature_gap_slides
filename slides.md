@@ -390,7 +390,7 @@ layout: default
             })(),
           );
 
-          // Provide the response in teh cache if available or fetch it from the server, otherwise.
+          // Provide the response in the cache if available or fetch it from the server, otherwise.
           return cachedResponse || serverResponsePromise;
         })(),
       );
@@ -412,7 +412,7 @@ layout: default
 }
 </style>
 
- <!-- https://web.dev/stale-while-revalidate/ -->
+ <!-- https://jakearchibald.com/2014/offline-cookbook/#stale-while-revalidate -->
 ---
 transition: fade-out
 layout: image
@@ -454,12 +454,35 @@ image: ./demooffline.png
 
 ---
 transition: fade-out
+layout: image
+image: ./webapi.png
+---
+
+---
+transition: fade-out
 layout: default
 ---
-# Web APIs
-Web APIs can add powerful features to our application
 
---> What Web can Do today (as general Intro)
+<div class="logso">
+  <img src="webcando.png">
+</div>
+
+<div class="url">
+  <h4>https://whatwebcando.today/</h4>
+</div>
+
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
+<style>
+.url {
+  position: absolute;
+  top: 155px;
+  right: 150px;
+  color: #585858;
+}
+</style>
 
 ---
 transition: fade-out
@@ -470,6 +493,7 @@ image: ./light.png
 <div class="logo">
   <img src="logoTweet.png">
 </div>
+
 
 ---
 layout: image
@@ -483,9 +507,45 @@ image: ./bread.png
 
 ---
 transition: fade-out
+layout: image
+image: ./lock.png
+---
+
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
+
+---
+transition: fade-out
+layout: image
+image: ./limits.png
+---
+
+<!-- 
+Limits of PWAs
+https://www.luxidgroup.com/blog/the-limitations-of-pwas 
+
+Web Push Notifications iOS 16.4, Apple has finally delivered its promise
+-->
+
+---
+transition: fade-out
+layout: image
+image: ./future.png
+---
+
+<div class="logo">
+  <img src="logoTweet.png">
+</div>
+
+
+---
+transition: fade-out
 layout: default
 ---
 # END
+
 
 ---
 layout: default
