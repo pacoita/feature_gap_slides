@@ -451,6 +451,38 @@ https://jakearchibald.com/2014/offline-cookbook/#stale-while-revalidate
 
 ---
 transition: fade-out
+layout: default
+---
+
+<div>
+  <img src="firestore.png" />
+</div>
+<h4 class="fs-link">https://firebase.google.com/products/firestore</h4>
+
+<style>
+.fs-link {
+    position: absolute;
+    bottom: 200px;
+    left: 80px;
+    color: white;
+} 
+
+</style>
+
+---
+transition: fade-out
+layout: default
+---
+
+```ts {all|3|all}
+initializeFirestore(app, 
+{ 
+    localCache: persistentLocalCache({tabManager: persistentSingleTabManager()}) 
+});
+```
+
+---
+transition: fade-out
 layout: image
 image: ./demooffline.png
 ---
@@ -485,7 +517,6 @@ image: ./demooffline.png
 <!-- Show in demo: 
 - Angular + Firestore
 - Standalone App
-- APGT (?)
 - Going offline + Auto Sync -->
 
 ---
@@ -530,16 +561,39 @@ image: ./light.png
   <img src="logoTweet.png">
 </div>
 
-
 ---
-layout: image
-image: ./bread.png
+transition: fade-out
+layout: default
 ---
 
+```ts {all|2-3|5-6|8-11|14-26|all}
+  readAmbientLight() {
+    // We create a new instance of the AmbientLightSensor object.
+    this.sensor = new window.AmbientLightSensor();
 
-<div class="logo">
-  <img src="logoTweet.png">
-</div>
+    // We start "reading" light values
+    this.sensor.start();
+
+    // LIVE light value changes are registered
+    this.sensor.onreading = () => {
+      this.updateTheme(this.sensor.illuminance);
+    };
+  };
+
+  updateTheme(luxValue: number): void {
+    /*
+    10 ~ 50 lux     Dark Environment
+    100 ~ 1000 lux  Normal
+    > 10000 lux     Bright Environment
+    */
+    if (luxValue <= 50) {
+      this.ambient = 'dark';
+    } else {
+      this.ambient = 'bright';
+    }
+    this.luxValue = luxValue;
+  }
+```
 
 ---
 transition: fade-out
@@ -554,11 +608,40 @@ image: ./lock.png
 
 ---
 transition: fade-out
-layout: image
-image: ./limits.png
+layout: default
 ---
 
+```ts {all|4-8|10-15|all}
+  // The wake lock can be requested ONLY after a user interaction 
+  async requestWakeLock() {
+    try {
+      // 'screen' is currently the only type of wake lock available
+      // 'system' type, preventing the CPU to suspend, has been removed
+      wakeLockSentinel = await navigator.wakeLock.request('screen');
+
+      // From this moment we have the screen lock!
+
+      // The screen wake lock is automatically released when we minimize a window
+      // or open a new browser tab when a screen wake lock is active.
+      wakeLockSentinel.addEventListener('release', () => {
+        // Do something if needed...
+        console.log('Wake Lock has been released...');
+      });
+
+    } catch (err) {
+      // The browser can refuse the wake lock request if the device has low battery, for instance.
+      console.error(err);      
+    }
+  }
+```
+
 <!-- 
+
+transition: fade-out
+layout: image
+image: ./limits.png
+
+
 Limits of PWAs
 https://www.luxidgroup.com/blog/the-limitations-of-pwas 
 
@@ -575,6 +658,9 @@ image: ./future.png
   <img src="logoTweet.png">
 </div>
 
+<!--
+ Web Push Notifications iOS 16.4, Apple has finally delivered its promise
+ -->
 
 ---
 transition: fade-out
